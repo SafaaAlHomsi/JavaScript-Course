@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Safaa one page Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: white;
+      color: #333;
+    }
+
+    nav {
+      background-color: #000;
+      padding: 10px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    #home {
+      background-color: #f0f0f0;
+    }
+
+    #gallery {
+      background-color: #e0e0e0;
+      text-align: center;
+    }
+
+    #gallery img {
+      width: 200px;
+      margin: 10px;
+      border: 2px solid #333;
+    }
+
+    #video {
+      background-color: #d0d0d0;
+      text-align: center;
+    }
+
+    #video iframe {
+      width: 80%;
+      max-width: 560px;
+      height: 315px;
+    }
+
+    #contact {
+      background-color: #c0c0c0;
+    }
+
+    form {
+      max-width: 500px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    input, textarea {
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #333;
+    }
+
+    footer {
+      background-color: #000;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    <style>
+  /* Lightbox styles */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .lightbox img {
+    max-width: 90%;
+    max-height: 80%;
+    border: 5px solid white;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+  }
+</style>
+
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#video">Video</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="home">
+    <h1>Hey, This is Safaa!</h1>
+    <p>Here is my simple demonstration of a one page website using HTML and CSS project. Explore the sections below!</p>
+  </section>
+
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <img src="https://cdn.pixabay.com/photo/2018/08/09/10/46/telephone-3594206_1280.jpg" alt="Image 1">
+    <img src="https://cdn.pixabay.com/photo/2018/08/09/10/46/telephone-3594206_1280.jpg" alt="Image 2">
+    <img src="https://cdn.pixabay.com/photo/2018/08/09/10/46/telephone-3594206_1280.jpg" alt="Image 3">
+  </section>
+
+  <section id="video">
+    <h2>Watch This Video</h2>
+<iframe width="914" height="514" src="https://www.youtube.com/embed/Z7-QdoofMq8" title="Charlie Chaplin - The Kid - Fight Scene" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <input type="submit" value="Send Message">
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Safaa AlHomsi's One-Page Website. All rights reserved.</p>
+  </footer>
+
+  <!-- Lightbox Container -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightbox-close">&times;</span>
+  <img id="lightbox-img" src="" alt="Enlarged image">
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.getElementById('lightbox-close');
+
+  document.querySelectorAll('#gallery img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = img.src;
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target !== lightboxImg) {
+      lightbox.style.display = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>
